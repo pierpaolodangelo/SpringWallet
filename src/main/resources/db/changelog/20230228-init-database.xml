@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet id="20230228230400-1" author="Pierpaolo D'Angelo">
+        <createTable tableName="CATEGORY">
+            <column name="ID" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="NAME" type="VARCHAR(4000)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="20230228230400-2" author="Pierpaolo D'Angelo">
+        <createSequence sequenceName="CATEGORY_SEQUENCE" incrementBy="100"/>
+    </changeSet>
+    <changeSet id="20230228230400-3" author="Pierpaolo D'Angelo">
+        <createTable tableName="TRANSACTION">
+            <column name="ID" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="TRANSACTION_TIMESTAMP" type="TIMESTAMP"/>
+            <column name="TYPE" type="INTEGER"/>
+            <column name="CATEGORY_ID" type="INTEGER">
+                <constraints referencedTableName="CATEGORY" referencedColumnNames="ID"
+                             foreignKeyName="FK_CATEGORY_ID_TRANSACTION"/>
+            </column>
+            <column name="AMOUNT" type="DECIMAL"/>
+            <column name="NOTE" type="VARCHAR(4000)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="20230228230400-4" author="Pierpaolo D'Angelo">
+        <createSequence sequenceName="TRANSACTION_SEQUENCE" incrementBy="100"/>
+    </changeSet>
+</databaseChangeLog>
