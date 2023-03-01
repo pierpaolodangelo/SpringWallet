@@ -1,10 +1,6 @@
 package it.pierpaolo.springwallet.dto;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public class CategoryDTO {
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private long id;
     private String name;
 
