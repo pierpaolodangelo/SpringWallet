@@ -2,7 +2,6 @@ package it.pierpaolo.springwallet.controller;
 
 import it.pierpaolo.springwallet.dto.CategoryDTO;
 import it.pierpaolo.springwallet.service.CategoryService;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
