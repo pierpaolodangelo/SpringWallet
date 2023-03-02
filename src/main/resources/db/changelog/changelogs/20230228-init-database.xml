@@ -32,4 +32,12 @@
     <changeSet id="20230228230400-4" author="Pierpaolo D'Angelo">
         <createSequence sequenceName="TRANSACTION_SEQUENCE" incrementBy="100"/>
     </changeSet>
+    <changeSet id="20230228230400-5" author="Pierpaolo D'Angelo">
+        <dropColumn tableName="TRANSACTION" columnName="TRANSACTION_TIMESTAMP"/>
+    </changeSet>
+    <changeSet id="20230228230400-6" author="Pierpaolo D'Angelo">
+        <addColumn tableName="TRANSACTION">
+            <column name="TRANSACTION_DATE" type="DATE"/>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>
